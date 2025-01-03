@@ -1,0 +1,29 @@
+{%extends 'lovers/layout.html'%}
+
+{%block body%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'lovers/profile.css'%}">
+</head>
+<body>
+    
+    <h1 class="p">My Profile</h1>
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="{{ user.profile.profile_pic.url }}" alt="No image">
+        </div>
+        <div class="profile-info">
+            <h2>{{ user.username }}</h2>
+            
+            <p>Course: {{user.profile.Course}}</p>
+            <button type="submit"><a href="{% url 'editprofile'%}">Editprofile</a></button>
+            </div>
+    </div>
+    
+     
+</body>
+</html>
+{%endblock%}

@@ -1,0 +1,35 @@
+{% extends 'lovers/layout.html'%}
+
+{% block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{%static 'lovers/chatdetail.css'%}" >
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chat with {{ chat_partner.username }}</h2>
+
+<div class="chat-container">
+    {% for message in conversation %}
+        <div class="{% if message.sender == request.user %}outgoing{% else %}incoming{% endif %}">
+            <p><strong>{{ message.sender.username }}:</strong> {{ message.content }}</p>
+            <span class="timestamp">{{ message.time }}</span>
+        </div>
+    {% empty %}
+        <p>No messages in this conversation yet. Start chatting!</p>
+    {% endfor %}
+</div>
+
+<form method="post" action="{% url 'sendmessage' receiver_id=chat_partner.id %}">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="Type your message..." required>
+    <button type="submit">Send</button>
+</form>
+
+</body>
+</html>
+{%endblock%}

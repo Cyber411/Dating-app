@@ -1,0 +1,73 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  h1.p {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em;
+    color: #3795d0;  /* Adjust this to your preferred heading color */
+  }
+  
+  /* Profile Container */
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff; /* White background for profile card */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding for content within the card */
+  }
+  
+  /* Profile Image */
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scales image to fill container while maintaining aspect ratio */
+  }
+  
+  /* Profile Info */
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #618ba9;  /* Adjust this to your preferred username color */
+  }
+  
+  .profile-info p {
+    margin-bottom: 15px;
+    color: #333; /* Adjust this to your preferred bio text color */
+  }
+  
+  .profile-info button {
+    background-color: #3498db;  /* Adjust this to your preferred button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: bold; /* Makes the button text stand out */
+  }
+  
+  .profile-info button:hover {
+    background-color: #2980b9;  /* Adjust this to a darker shade of the button color */
+  }

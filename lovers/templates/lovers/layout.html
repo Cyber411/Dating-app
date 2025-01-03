@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'lovers/dash.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div  class="nav-bar">
+
+    <div>
+        <h1 class="logo">Know me</h1>
+    </div>
+
+    <na>
+        <ul>
+            <li><a href="{% url 'home'%}"><span class="material-icons">home</span></a></li>
+            <li><a href="{% url 'chatlist'%}"><span class="material-icons">message</span></a></li>
+            <li><a href="{% url 'pick'%}"><span class="material-icons">people</span></a></li>
+            <li><a href="{% url 'posts'%}"><span class="material-icons">article</span></a></li>
+            <li><a href="{% url 'profile'%}"><span class="material-icons">person</span></a></li>
+            
+            <li><a href="{% url 'logout'%}"><span class="material-icons">logout</span></a></span></li>
+            
+        </ul>
+
+    </na>
+</div>
+<main>
+    <h1 class="t"></h1>
+    {% block body%}
+    {% endblock%}
+</main>
+<footer>
+
+
+</footer>
+
+
+  
+</body>
+</html>

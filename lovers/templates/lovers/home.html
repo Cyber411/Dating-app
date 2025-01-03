@@ -1,0 +1,35 @@
+{% extends 'lovers/layout.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lovers/home.css'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="home-section">
+        {% if morning %}
+            <h1 class="greet">Good morning, {{ user.username }}!</h1>
+        {% elif afternoon %}
+            <h1 class="greet">Good afternoon, {{ user.username }}!</h1>
+        {% elif evening %}
+            <h1 class="greet">Good evening, {{ user.username }}!</h1>
+        {% else %}
+            <h1 class="greet">It's late, {{ user.username }}! Still awake?</h1>
+        {% endif %}
+    
+    
+    <h2 class="homess">Your new V-friend is just a click away. Click <a href="{% url 'pick'%}"><button class="homessb">Get friend</button></a> to get started</h2>
+</section>
+</body>
+</html>
+
+
+
+
+
+{% endblock %}

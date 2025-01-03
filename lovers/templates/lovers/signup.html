@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    
+    <link rel="stylesheet"  href="{%static 'lovers/style.css'%}" >
+    <script src="{% static 'lovers/javascript/signup.js'%}"></script>
+</head>
+<body class="signup">
+<div>
+    <div class="Wrap">
+        <h1>Signup</h1>
+        <form action="{% url 'signup'%}" method="POST">
+            {% csrf_token%}
+            
+        <div class="input"><input type="text" name="username" placeholder="Username" id="username"></div>
+        <div class="input"><input type="email" name="email" placeholder="email address"></div>
+        <div class="input"><input type="password" name="password1" placeholder="password"></div>
+        <div class="input"><input type="password" name="password2" placeholder=" confirm password"></div>
+        <div class="btn"><button type="submit"  >signup</button></div>
+       
+    
+    </form>
+    <p>Having an account already?<a href="{% url 'login'%}">Login</a></p>
+    </div>
+</div>
+</body>
+</html>

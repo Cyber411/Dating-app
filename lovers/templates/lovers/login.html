@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+
+    <link rel="stylesheet"  href="{%static 'lovers/style.css'%}" >
+</head>
+<body class="login">
+    <div class="enclose">
+<h1>Login</h1>
+<form action="{% url 'login'%}" method="POST">
+    
+    {% csrf_token%}
+    <div class="input-box"><input type="text" name="username" placeholder="Username" required> </div>
+    <div class="input-box"><input type="password" name="password" placeholder="password" required> </div>
+
+<div class="button"><button type="submit">Login</button></div>
+<p class="forgot">forgot password?<a href="">recover password</a></p>
+</form>
+    </div>
+
+    
+</body>
+</html>

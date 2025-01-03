@@ -1,0 +1,23 @@
+{% extends 'lovers/layout.html'%}
+{%block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'lovers/messages.css'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h>select  messages to view</h>
+    <div class="dd">
+        <button class="inbox-button"><a href="{% url 'inbox' %}">Inbox</a></button>
+        <button class="sent-button"><a href="{% url 'sent' %}">Sent</a></button>
+    </div>
+
+
+    
+</body>
+</html>
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends 'lovers/layout.html'%}
+
+{% block body%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pick Your Match</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'lovers/pick.css'%}">
+</head>
+<body class="body">
+   
+    
+    <div class="match-container">
+        {% for user in users %}
+        <div class="match-card">
+            <div class="image-holder">
+                <img src="{{ user.profile.profile_pic.url }}" alt="No image">
+            </div>
+            <div class="user-info">
+                <h2>{{ user.username}}</h2>
+                <p> Course:{{ user.profile.Course }}</p>
+                <a href="{% url 'viewprofile' author_id=user.id %}"><button class="viewprofile">View profile</button> </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+   
+</body>
+</html>
+
+{% endblock%}

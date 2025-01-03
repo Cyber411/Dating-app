@@ -1,0 +1,50 @@
+{% extends 'lovers/layout.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox - Chats</title>
+    <link rel="stylesheet" href="{% static 'lovers/chatlist.css' %}">
+</head>
+
+<body>
+    <div class="chat-list-container">
+        <h2 class="chat-header">Chats</h2>
+
+        <div class="chat-list">
+            {% if chats %}
+                {% for chat in chats %}
+                    <a href="{% if chat.receiver == request.user %}{% url 'chat_detail' user_id=chat.sender.id %}{% else %}{% url 'chat_detail' user_id=chat.receiver.id %}{% endif %}" class="chat-item">
+                        <div class="chat-item-img">
+                            <!-- You can add a profile picture if available -->
+                            {%if chat.receiver == request.user%}
+                            <img src="{{ chat.sender.profile.profile_pic.url }}" alt="Profile Picture">
+                            {% else%}
+                            <img src="{{ chat.receiver.profile.profile_pic.url }}" alt="Profile Picture">
+                            {% endif%}
+                        </div>
+                        <div class="chat-item-info">
+                            {% if chat.receiver == request.user %}
+                                <h3 class="chat-username">{{ chat.sender.username }}</h3>
+                            {% else %}
+                                <h3 class="chat-username">{{ chat.receiver.username }}</h3>
+                            {% endif %}
+                            <p class="chat-message">{{ chat.content|truncatewords:10 }}</p>
+                            <small class="chat-time">{{ chat.time|date:"H:i" }}</small>
+                        </div>
+                    </a>
+                {% endfor %}
+            {% else %}
+                <p>No chats available. Start a conversation!</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

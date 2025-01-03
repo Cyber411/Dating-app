@@ -1,0 +1,21 @@
+.homess{
+    font-size:50px;
+    font-style:oblique;
+    padding-top: 20px;
+    width: 60%;
+    color: rgb(45, 28, 28);
+    
+
+
+}
+.homessb{
+    background-color: rgb(253, 0, 0);
+    padding: 8px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+}
+.home-section{
+   margin: 0 auto;
+   padding-top: 50px;
+}

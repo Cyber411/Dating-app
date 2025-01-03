@@ -1,0 +1,48 @@
+{% extends 'lovers/layout.html'%}
+{%block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ person.username }}'s Profile</title>
+    <link rel="stylesheet" href="{% static 'lovers/viewprofile.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <!-- Profile Picture -->
+            <div class="profile-pic">
+                <img src="{{ person.profile.profile_pic.url }}" alt="{{ person.username }}'s profile picture">
+            </div>
+
+            <!-- User Info -->
+            <div class="profile-info">
+                <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+                <p class="username">@{{ person.username }}</p>
+            </div>
+        </div>
+
+        <!-- Bio Section -->
+        <div class="bio-section">
+            <h3>About</h3>
+            <p>{{ person.profile.bio }}</p>
+        </div>
+
+        <!-- Additional Info Section -->
+        <div class="additional-info">
+            <p><strong>Email:</strong> {{ person.email }}</p>
+            <p><strong>Joined on:</strong> {{ person.date_joined|date:"F j, Y" }}</p>
+        </div>
+
+        <!-- Message Button -->
+        <div class="actions">
+            <a href="{% url 'sendmessage' receiver_id=person.id %}" class="btn"> Message</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+{%endblock%}

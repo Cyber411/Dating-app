@@ -1,0 +1,38 @@
+{% extends 'lovers/layout.html'%}
+
+{% block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <title>Create a Post</title>
+    <link rel="stylesheet" href="{% static 'lovers/createpost.css'%}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Create a Post</h1>
+
+        <form action="{% url 'createpost'%}" method="POST">
+            {% csrf_token%}
+            <!-- Title Field -->
+            <div class="form-group">
+                <label for="title">Post Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter post title" required>
+            </div>
+
+            <!-- Body Field -->
+            <div class="form-group">
+                <label for="body">Post Body:</label>
+                <textarea id="body" name="body" rows="10" placeholder="Enter the content of your post" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit Post</button>
+            </div>
+        </form>
+    </div>
+    <a href="{% url 'pick'%}">back to pick </a>
+</body>
+</html>
+{%endblock%}

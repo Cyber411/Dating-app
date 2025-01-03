@@ -1,0 +1,22 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Profile</title>
+  <link rel="stylesheet" href="{%static 'lovers/edit.css'%}">
+</head>
+<body>
+  <h1>Create Your Profile</h1>
+  <form method="POST" enctype="multipart/form-data" action="{% url 'editprofile'%}">
+    {% csrf_token %}
+    <label for="profile_pic">Profile Picture:</label>
+    <input type="file" id="profile_pic" name="profile_pic">
+  
+    <label for="bio">Course:</label>
+    <textarea id="bio" name="bio" rows="4"> {{user.profile.bio}}</textarea>
+  
+    <button type="submit">Save Changes</button>
+  </form>
+  </form>
+</body>
+</html>
