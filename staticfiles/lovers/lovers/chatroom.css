@@ -1,0 +1,5 @@
+
+#messages { border: 1px solid #ddd; padding: 10px; height: 300px; overflow-y: scroll; }
+.message { margin: 5px 0; }
+.message.sender { text-align: right; color: green; }
+.message.receiver { text-align: left; color: blue; }
