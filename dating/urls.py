@@ -20,7 +20,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('',include("lovers.urls")),
@@ -28,7 +28,9 @@ urlpatterns = [
     
 ]
 
+# Serve static files in production by using STATIC_URL and STATIC_ROOT
 if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
- urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+# Ensure static files are served even in production when DEBUG=False
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
