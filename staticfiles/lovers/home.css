@@ -1,111 +1,21 @@
-/* Main Home Section */
-.home-section {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-}
+.homess{
+    font-size:50px;
+    font-style:oblique;
+    padding-top: 20px;
+    width: 60%;
+    color: rgb(45, 28, 28);
+    
 
-/* Greeting Styles */
-.greet {
-    font-size: 26px;
-    color: #084b5e;
-    text-align: center;
-    margin-bottom: 15px;
-}
 
-/* Description Text */
-.description {
-    font-size: 18px;
-    color: #333;
-    text-align: center;
-    margin-bottom: 25px;
 }
-
-.description a {
-    color: #084b5e;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.description a:hover {
-    text-decoration: underline;
-}
-
-/* Quick Actions Section */
-.quick-actions {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.quick-actions h2 {
-    font-size: 22px;
-    color: #084b5e;
-    margin-bottom: 15px;
-}
-
-.action-buttons {
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-}
-
-.button {
-    text-decoration: none;
-    background-color: #084b5e;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.button:hover {
-    background-color: #066372;
-    transform: translateY(-5px);
-}
-
-/* Daily Highlights Section */
-.daily-highlights {
-    margin: 20px 0;
-}
-
-.daily-highlights h2 {
-    font-size: 22px;
-    color: #084b5e;
-    margin-bottom: 10px;
-}
-
-.daily-highlights ul {
-    list-style: none;
-    padding: 0;
-}
-
-.daily-highlights ul li {
-    font-size: 16px;
-    color: #555;
+.homessb{
+    background-color: rgb(253, 0, 0);
     padding: 8px;
-    border-bottom: 1px solid #ddd;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
 }
-
-/* Motivation Section */
-.motivation {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.motivation h2 {
-    font-size: 22px;
-    color: #084b5e;
-    margin-bottom: 10px;
-}
-
-.motivation p {
-    font-size: 16px;
-    color: #333;
-    font-style: italic;
+.home-section{
+   margin: 0 auto;
+   padding-top: 50px;
 }
