@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'dating',
         'USER':'postgres',
         'PASSWORD':'pCyberDBDataBase',
-        #'HOST':'localhost',
-        #'PORT':'5432'
+        'HOST':'dpg-ctsif4tumphs73fmsq90-a',
+        'PORT':'5432'
         
     }
 }
