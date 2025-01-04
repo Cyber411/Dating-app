@@ -22,8 +22,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('',include("lovers.urls")),
     path('admin/', admin.site.urls),
-    path('welcomepage/',include("lovers.urls"))
+    
 ]
 
 if settings.DEBUG:
