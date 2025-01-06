@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%nle#2sza)xg5k^-^vk4dqa@47x#2rwt^sx48*$%#f(%4$&gs6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dating-app-mpfn.onrender.com']
 
@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'dating',
         'USER':'postgres',
         'PASSWORD':'pCyberDBDataBase',
-        'HOST':'dpg-ctsif4tumphs73fmsq90-a',
-        'PORT':'5432'
+        #'HOST':'localhost',
+        #'PORT':'5432'
         
     }
 }

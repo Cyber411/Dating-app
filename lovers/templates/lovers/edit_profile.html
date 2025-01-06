@@ -1,7 +1,10 @@
-{% load static%}
+{% extends 'lovers/layout.html'%}
+
+{% block body%}
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static%}
   <title>Create Profile</title>
   <link rel="stylesheet" href="{%static 'lovers/edit.css'%}">
 </head>
@@ -20,3 +23,4 @@
   </form>
 </body>
 </html>
+{%endblock%}
