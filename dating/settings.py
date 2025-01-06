@@ -135,7 +135,7 @@ STATIC_URL = '/static/'  # URL for accessing static files
 
 
 # Directory where static files will be collected for production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/lovers')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files (uploaded user files)
 MEDIA_URL = '/media/'  # URL for accessing media files
