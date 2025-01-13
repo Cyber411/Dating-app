@@ -91,7 +91,7 @@ DATABASES = {
 }
 #postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a.oregon-postgres.render.com/daters
 
-DATABASES['default']=  dj_database_url.parse("postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a.oregon-postgres.render.com/daters")
+DATABASES['default']=  dj_database_url.parse("postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a/daters")
  
 
 # Password validation
