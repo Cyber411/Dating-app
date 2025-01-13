@@ -81,17 +81,14 @@ WSGI_APPLICATION = 'dating.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'daters',
-        'USER':'daters_user',
-        'PASSWORD':'OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e',
-        'HOST':'dpg-ctsif4tumphs73fmsq90-a',
-        'PORT':'5432'
+        
         
     }
 }
  
 #Automatically configure the database from DATABASE_URL in production
-DATABASE_URL = os.getenv('DATABASE_URL')
+postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a.oregon-postgres.render.com/daters
+DATABASE_URL = os.getenv('postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a.oregon-postgres.render.com/daters')
 if DATABASE_URL:
    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
