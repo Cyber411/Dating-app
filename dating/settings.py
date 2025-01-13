@@ -78,13 +78,13 @@ WSGI_APPLICATION = 'dating.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+#DATABASES = {
+    #'default': {
+      #  'ENGINE': 'django.db.backends.postgresql',
        
         
-    }
-}
+   # }
+#}
  
  #Fetch the DATABASE_URL from the environment variable (with a fallback option)
 DATABASE_URL = os.getenv('postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a/daters')
@@ -94,6 +94,7 @@ if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
     }
+    DATABASES['default']['NAME'] = 'daters'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
