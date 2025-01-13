@@ -78,30 +78,21 @@ WSGI_APPLICATION = 'dating.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# Fetch the DATABASE_URL from the environment variable
-DATABASE_URL = os.getenv('postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a/daters')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dating',
+        'USER':'postgres',
+        'PASSWORD':'pCyberDBDataBase',
+        'HOST':'localhost',
+        'PORT':'5432'
+        
+    }
+}
+postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a.oregon-postgres.render.com/daters
 
-# If DATABASE_URL exists, configure the DATABASES setting
-if DATABASE_URL:
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=DATABASE_URL, 
-            conn_max_age=600, 
-            ssl_require=True
-        )
-    }
-else:
-    # You can configure a fallback option if DATABASE_URL is not set
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',  # Set the engine explicitly
-            'NAME': 'daters',  # Replace with your database name
-            'USER': 'daters_user',  # Replace with your database user
-            'PASSWORD': 'OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e',  # Replace with your database password
-            'HOST': 'dpg-ctsif4tumphs73fmsq90-a',  # Replace with the host
-            'PORT': '5432',  # Replace with the port
-        }
-    }
+DATABASES['default']=  dj_database_url.parse("postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a.oregon-postgres.render.com/daters")
+ 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
