@@ -18,14 +18,5 @@ class Migration(migrations.Migration):
             name='post',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='likes', to='lovers.post'),
         ),
-        migrations.CreateModel(
-            name='Message',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('content', models.TextField()),
-                ('time', models.DateTimeField(auto_now_add=True)),
-                ('receiver', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='received', to=settings.AUTH_USER_MODEL)),
-                ('sender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='sent', to=settings.AUTH_USER_MODEL)),
-            ],
-        ),
+        
     ]

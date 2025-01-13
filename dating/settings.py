@@ -51,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware"
 ]
 
 ROOT_URLCONF = 'dating.urls'
@@ -81,17 +80,17 @@ WSGI_APPLICATION = 'dating.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'daters',
-        'USER':'daters_user',
-        'PASSWORD':'OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e',
-        'HOST':'dpg-ctsif4tumphs73fmsq90-a',
+        'NAME': 'dating',
+        'USER':'postgres',
+        'PASSWORD':'pCyberDBDataBase',
+        'HOST':'localhost',
         'PORT':'5432'
         
     }
 }
  
 #Automatically configure the database from DATABASE_URL in production
-DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_URL = os.getenv('postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a/daters')
 if DATABASE_URL:
    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
@@ -132,12 +131,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'  # URL for accessing static files
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
 
 
 
