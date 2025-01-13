@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'dating.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 # Fetch the DATABASE_URL from the environment variable
-DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_URL = os.getenv('postgresql://daters_user:OGg4aJ82jRhrI0DSKHanU1VWj3XUPW6e@dpg-ctsif4tumphs73fmsq90-a/daters')
 
 # If DATABASE_URL exists, configure the DATABASES setting
 if DATABASE_URL:
