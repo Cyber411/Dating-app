@@ -81,11 +81,7 @@ WSGI_APPLICATION = 'dating.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dating',
-        'USER':'postgres',
-        'PASSWORD':'pCyberDBDataBase',
-        'HOST':'localhost',
-        'PORT':'5432'
+       
         
     }
 }
